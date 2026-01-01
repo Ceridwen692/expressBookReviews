@@ -1,6 +1,11 @@
 const express = require("express");
 const axios = require("axios");
 
+const getBooksAxios = async () => {
+  const response = await axios.get("http://localhost:5000/");
+  return response.data;
+};
+
 let books = require("./booksdb.js");
 let isValid = require("./auth_users.js").isValid;
 let users = require("./auth_users.js").users;
